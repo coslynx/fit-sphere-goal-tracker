@@ -1,0 +1,153 @@
+/*
+  This file contains global CSS styles for the entire FitTracker application.
+  It should be included in the main application entry point (public/index.html) with:
+  <link rel='stylesheet' href='./styles/global.css'>
+*/
+
+/* 1. Reset default browser styles */
+/* Resets margin, padding, and box-sizing for all elements */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Define global CSS variables for consistent theming */
+:root {
+  /* Color palette */
+  --primary-color: #3b82f6; /* Blue-500 */
+  --primary-color-hover: #2563eb; /* Blue-700 */
+  --secondary-color: #6b7280; /* Gray-500 */
+  --secondary-color-hover: #4b5563; /* Gray-700 */
+  --accent-color: #f59e0b; /* Yellow-500 */
+  --accent-color-hover: #d97706; /* Yellow-700 */
+  --success-color: #16a34a; /* Green-500 */
+  --success-color-hover: #15803d; /* Green-700 */
+  --error-color: #dc2626; /* Red-500 */
+  --error-color-hover: #b91c1c; /* Red-700 */
+  --warning-color: #facc15; /* Yellow-400 */
+  --warning-color-hover: #eab308; /* Yellow-500 */
+  --info-color: #38bdf8; /* Sky-400 */
+  --info-color-hover: #0ea5e9; /* Sky-500 */
+
+  /* Font and text settings */
+  --font-family: sans-serif; /* Arial, Helvetica, sans-serif */
+  --text-color-primary: #374151; /* Gray-700 */
+  --text-color-secondary: #6b7280; /* Gray-500 */
+  --heading-font-weight: 700; /* bold */
+
+  /* Background colors */
+  --bg-color-primary: #ffffff; /* White */
+  --bg-color-secondary: #f9fafb; /* Gray-50 */
+  --bg-color-tertiary: #f3f4f6; /* Gray-100 */
+
+  /* Border settings */
+  --border-color: #d1d5db; /* Gray-300 */
+  --border-radius: 0.375rem; /* Rounded-md (6px) */
+
+  /* Shadow settings */
+  --box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Shadow-sm */
+
+  /* Spacing */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 0.75rem;  /* 12px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2rem;     /* 32px */
+}
+
+/* 3. Import Tailwind CSS directives */
+/* Imports Tailwind's base styles, component classes, and utility classes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 4. Apply global styles */
+/* Sets the default font family and text color for the entire application */
+body {
+  font-family: var(--font-family);
+  color: var(--text-color-primary);
+  background-color: var(--bg-color-secondary);
+  line-height: 1.6; /* Improves text readability */
+}
+
+/* Style headings (h1 to h6) */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--heading-font-weight);
+  color: var(--text-color-primary);
+  margin-bottom: var(--space-sm); /* consistent spacing below headings */
+}
+
+/* Style links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out; /* smooth color transition on hover */
+}
+
+a:hover {
+  color: var(--primary-color-hover);
+  text-decoration: underline; /* provide visual feedback on hover */
+}
+
+/* Style lists (ul and ol) */
+ul, ol {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+/* Style paragraphs */
+p {
+  margin-bottom: var(--space-md);
+}
+
+/* Responsive typography (example) */
+/* Adjust font sizes for larger screens to improve readability */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.125rem; /* Slightly larger paragraph text on medium screens and up */
+  }
+}
+
+/* Container Style */
+/* Provides a basic container to center content with a maximum width */
+.container {
+  width: 100%;
+  padding-right: var(--space-md);
+  padding-left: var(--space-md);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Media query for medium screens and up */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/* Media query for large screens and up */
+@media (min-width: 992px) {
+  .container {
+    max-width: 992px;
+  }
+}
+
+/* Media query for extra large screens and up */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
